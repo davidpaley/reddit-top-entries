@@ -35,16 +35,13 @@ class sidebarMenu extends Component {
     const { setRedditList, redditList } = this.props;
     const item = redditList.list.find(i => i.data.id === id);
     item.data.visited = true;
-    setRedditList(redditList.list);
+    console.log(item);
+    setRedditList(redditList.list, item);
   }
 
   render() {
     const { list } = this.props.redditList;
-    // console.log('renderizandooooo list');
-    // if (list.length) {
-    //   const item = list.find(item => item.data.visited ===true);
-    //   console.log (item);
-    // }
+    console.log(this.props.redditList);
     return (
       <div className="sidebar-menu">
         <h4 className="title">Reddit posts</h4>
@@ -75,7 +72,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setRedditList: list => dispatch(setRedditList(list)),
+  setRedditList: (list, item) => dispatch(setRedditList(list, item)),
 });
 
 export default connect(

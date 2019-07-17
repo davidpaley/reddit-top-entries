@@ -28,14 +28,12 @@ class RedditPage extends PureComponent {
     })
   }
   render() {
-    const { list } = this.props.redditList;
-    // console.log(this.props.redditList);
+    const { lastPostVisited } = this.props.redditList;
     return (
       <div className="App">
           <SidebarMenu />
           <div className="post-container">
-            {list && list.length > 0 &&
-              list.map((item, index) => <div key={`${item.data.title}${index}`}>{item && item.data.title}</div>)}
+            <h1>{lastPostVisited && lastPostVisited.data && lastPostVisited.data.title}</h1>
           </div>
       </div>
     )
