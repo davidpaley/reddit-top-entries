@@ -25,6 +25,7 @@ class ListCard extends PureComponent {
             >
           </div>
         </div>
+        <hr className="card-division" />
       </div>
     )
   }

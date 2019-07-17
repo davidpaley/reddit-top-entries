@@ -3,6 +3,8 @@
     color: white;
     width: 55%;
     padding: 5px;
+    overflow-y: scroll;
+    height: 1000px;
   }
   @media screen and (min-width: 64em) {
     .sidebar-menu {

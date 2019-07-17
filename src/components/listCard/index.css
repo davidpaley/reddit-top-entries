@@ -1,6 +1,7 @@
 .list-card {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .img-container {
@@ -12,7 +13,7 @@
 }
 
 .text-container {
-  padding: 5px;
+  display: none;
 }
 .container {
   display: flex;
@@ -20,4 +21,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px;
+}
+
+.card-division {
+  width: 100%;
+}
+
+@media screen and (min-width: 52em) {
+  .text-container {
+    padding: 5px;
+    display: block;
+  }
 }
