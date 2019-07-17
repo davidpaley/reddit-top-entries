@@ -27,9 +27,41 @@
   width: 100%;
 }
 
+.title-container { 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.num-comments {
+  color: #DAA520;
+}
+
+.button-dismiss {
+  color: white;
+  background-color: #DAA520;
+}
+
 @media screen and (min-width: 52em) {
   .text-container {
     padding: 5px;
     display: block;
   }
+  .title-container { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .hours-container {
+    margin-left: 15px;
+  }
+
+  .num-comments {
+    margin-left: 15px;
+  }
+  
 }
+
