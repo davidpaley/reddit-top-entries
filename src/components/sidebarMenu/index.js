@@ -18,16 +18,33 @@ class sidebarMenu extends Component {
 
   restoreAll = () => {
     const { setRedditList, redditList } = this.props;
-    setRedditList(redditList.originalList);
+    const newArray = redditList.originalList.map(item => {
+      const newItem = { ...item };
+      newItem.data.visited = false;
+      return newItem;
+    });
+    setRedditList([...newArray]);
   }
 
-  dismissItem = (id) => {
+  onDismissItem = (id) => {
     const { setRedditList, redditList } = this.props;
     setRedditList(redditList.list.filter(item => item.data.id !== id));
   }
 
+  onItemClicked = (id) => {
+    const { setRedditList, redditList } = this.props;
+    const item = redditList.list.find(i => i.data.id === id);
+    item.data.visited = true;
+    setRedditList(redditList.list);
+  }
+
   render() {
     const { list } = this.props.redditList;
+    // console.log('renderizandooooo list');
+    // if (list.length) {
+    //   const item = list.find(item => item.data.visited ===true);
+    //   console.log (item);
+    // }
     return (
       <div className="sidebar-menu">
         <h4 className="title">Reddit posts</h4>
@@ -43,9 +60,10 @@ class sidebarMenu extends Component {
         {list && list.length > 0 &&
           list.map((item, index) => 
           <ListCard
-            key={`${item.data.title}${index}`}
+            key={`${item.data.id}${index}${item.data.visited}`}
             data={item.data}
-            onDismissItem={this.dismissItem}
+            onDismissItem={this.onDismissItem}
+            onItemClicked={this.onItemClicked}
           />)}
       </div>
     )

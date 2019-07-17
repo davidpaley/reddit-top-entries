@@ -8,6 +8,6 @@ export const setRedditList = (redditList) => dispatch => {
 export const setOriginalRedditList = (redditList) => dispatch => {
   dispatch({
     type: 'SET_REDDIT_ORIGINAL_LIST',
-    payload: redditList,
+    payload: [...redditList],
   })
 }

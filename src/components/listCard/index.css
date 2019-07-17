@@ -4,6 +4,10 @@
   cursor: pointer;
 }
 
+.list-card-container {
+
+}
+
 .img-container {
   display: flex;
   flex-direction: row;
@@ -41,6 +45,11 @@
 .button-dismiss {
   color: white;
   background-color: #DAA520;
+  margin-left: 6px;
+}
+
+.visited-item {
+  color: grey;
 }
 
 @media screen and (min-width: 52em) {

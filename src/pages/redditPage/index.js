@@ -23,12 +23,13 @@ class RedditPage extends PureComponent {
        } = this.props;
       const list = response.data.children;
       setOriginalRedditList(list);
-      setRedditList(list);
+      const newList = [...list];
+      setRedditList(newList);
     })
   }
   render() {
     const { list } = this.props.redditList;
-    console.log(this.props.redditList);
+    // console.log(this.props.redditList);
     return (
       <div className="App">
           <SidebarMenu />
