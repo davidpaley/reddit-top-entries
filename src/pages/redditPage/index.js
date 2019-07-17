@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setRedditList } from '../../redux/actions/redditList';
+import { getRedditLastEntries } from '../../service/redditApi';
 import './index.css';
 
 
@@ -12,7 +13,12 @@ class RedditPage extends PureComponent {
   };
 
   componentDidMount() {
-    this.props.setRedditList(['pepe 1', 'pepe 2', 'pepe 3']);
+    getRedditLastEntries().then(response => {
+      console.log(response);
+      const list = response.data.children;
+      console.log(list.length);
+      this.props.setRedditList(list);
+    })
   }
   render() {
     const { list } = this.props.redditList;
@@ -21,7 +27,7 @@ class RedditPage extends PureComponent {
           <div className="sidebar-menu" />
           <div className="post-container">
             {list && list.length > 0 &&
-              list.map(item => <div key={item}>{item}</div>)}
+              list.map((item, index) => <div key={`${item.data.title}${index}`}>{item && item.data.title}</div>)}
           </div>
       </div>
     )
