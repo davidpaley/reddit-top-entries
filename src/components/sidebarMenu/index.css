@@ -15,3 +15,10 @@
   .title {
     text-align: center
   }
+
+  .button-apply-all {
+    color: white;
+    background-color: #DAA520;
+    width: 100%;
+  }
+  

@@ -6,6 +6,7 @@ import './index.css';
 class ListCard extends PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired,
+    onDismissItem: PropTypes.func.isRequired,
   };
 
   getHoursAgo = (date) => {
@@ -15,6 +16,11 @@ class ListCard extends PureComponent {
     const diffHours = Math.ceil(diffTime / (1000 * 60 * 60)); 
     console.log(diffHours);
     return diffHours;
+  }
+
+  dismissItem = () => {
+    const { data, onDismissItem } = this.props;
+    onDismissItem(data.id);
   }
 
   render() {
@@ -39,7 +45,10 @@ class ListCard extends PureComponent {
           </div>
         </div>
         <div className="title-container">
-          <button type="button" className="button-dismiss">
+          <button 
+            type="button" 
+            className="button-dismiss"
+            onClick={this.dismissItem}>
             Dismiss post
           </button>
           <span className="num-comments">{data.num_comments} comments</span>

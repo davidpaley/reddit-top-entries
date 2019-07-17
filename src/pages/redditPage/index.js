@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setRedditList } from '../../redux/actions/redditList';
+import { setRedditList, 
+  setOriginalRedditList 
+} from '../../redux/actions/redditList';
 import { getRedditLastEntries } from '../../service/redditApi';
 import SidebarMenu from '../../components/sidebarMenu';
 import './index.css';
@@ -15,14 +17,18 @@ class RedditPage extends PureComponent {
 
   componentDidMount() {
     getRedditLastEntries().then(response => {
-      console.log(response);
+      const { 
+        setRedditList,
+        setOriginalRedditList,
+       } = this.props;
       const list = response.data.children;
-      console.log(list.length);
-      this.props.setRedditList(list);
+      setOriginalRedditList(list);
+      setRedditList(list);
     })
   }
   render() {
     const { list } = this.props.redditList;
+    console.log(this.props.redditList);
     return (
       <div className="App">
           <SidebarMenu />
@@ -41,6 +47,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setRedditList: list => dispatch(setRedditList(list)),
+  setOriginalRedditList: list => dispatch(setOriginalRedditList(list)),
 });
 
 export default connect(
