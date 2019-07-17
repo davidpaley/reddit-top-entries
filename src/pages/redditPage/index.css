@@ -1,0 +1,23 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 3500px;
+}
+
+.sidebar-menu {
+  background-color: black;
+  width: 55%;
+}
+@media screen and (min-width: 64em) {
+  .sidebar-menu {
+    width: 25%;
+  }
+  .post-container {
+    width: 75%;
+  }
+}
+.post-container {
+  width: 45%;
+}
+
