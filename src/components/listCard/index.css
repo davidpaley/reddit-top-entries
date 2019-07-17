@@ -1,0 +1,23 @@
+.list-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2px;
+}
+
+.text-container {
+  padding: 5px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}

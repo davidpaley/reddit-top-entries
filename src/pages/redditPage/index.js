@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setRedditList } from '../../redux/actions/redditList';
 import { getRedditLastEntries } from '../../service/redditApi';
+import SidebarMenu from '../../components/sidebarMenu';
 import './index.css';
 
 
@@ -24,7 +25,7 @@ class RedditPage extends PureComponent {
     const { list } = this.props.redditList;
     return (
       <div className="App">
-          <div className="sidebar-menu" />
+          <SidebarMenu />
           <div className="post-container">
             {list && list.length > 0 &&
               list.map((item, index) => <div key={`${item.data.title}${index}`}>{item && item.data.title}</div>)}

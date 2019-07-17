@@ -1,0 +1,15 @@
+.sidebar-menu {
+    background-color: black;
+    color: white;
+    width: 55%;
+    padding: 5px;
+  }
+  @media screen and (min-width: 64em) {
+    .sidebar-menu {
+      width: 25%;
+    }
+  }
+
+  .title {
+    text-align: center
+  }
