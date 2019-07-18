@@ -1,5 +1,4 @@
 import crossFetch from 'cross-fetch';
-// import { getFromStorage } from './localStorage';
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -28,7 +27,6 @@ export default function request(url, options) {
       ...options.headers,
     };
     if (options.hasAuthorization) {
-      // fetchOptions.headers.Authorization = `Bearer ${getFromStorage('loginToken')}`;
       options.hasAuthorization = undefined;
     }
     fetchOptions.body = JSON.stringify(options.body);

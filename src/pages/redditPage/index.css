@@ -12,5 +12,3 @@ body {
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
 }
-
-.App::-webkit-scrollbar { width: 0 !important }
