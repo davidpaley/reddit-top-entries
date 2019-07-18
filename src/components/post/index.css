@@ -17,3 +17,9 @@
   .post-title {
     word-break: break-all;
   }
+
+  .button-save-picture {
+    color: white;
+    background-color: #DAA520;
+    width: 100%;
+  }

@@ -2,6 +2,7 @@ const initialState = {
     list: [],
     originalList: [],
     lastPostVisited: {},
+    pictureGalery: [],
   };
   
   export default (state = initialState, action) => {
@@ -21,6 +22,11 @@ const initialState = {
         return {
           ...state,
           lastPostVisited: action.payload,
+        }
+      case 'SAVE_PICTURE':
+        return {
+          ...state,
+          pictureGalery: [...state.pictureGalery, action.payload],
         }
       default:
         return state

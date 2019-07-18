@@ -35,7 +35,6 @@ const SidebarMenu = (props) => {
     const { setRedditList, redditList } = props;
     const item = redditList.list.find(i => i.data.id === id);
     item.data.visited = true;
-    console.log(item);
     setRedditList(redditList.list, item);
   }
 
