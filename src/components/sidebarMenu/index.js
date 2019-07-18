@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import FlipMove from 'react-flip-move';
 import { setRedditList } from '../../redux/actions/redditList';
 import ListCard from '../listCard';
 import './index.css';
@@ -69,13 +70,15 @@ const SidebarMenu = (props) => {
         onClick={restoreAll}>Restore all</button>
       {list && list.length > 0 &&
         <>
-          {list.slice(firstPost, lastPost).map((item, index) => 
-          <ListCard
-            key={`${item.data.id}${index}${item.data.visited}`}
-            data={item.data}
-            onDismissItem={onDismissItem}
-            onItemClicked={onItemClicked}
-          />)}
+          <FlipMove>
+            {list.slice(firstPost, lastPost).map((item, index) => 
+            <ListCard
+              key={`${item.data.id}${index}${item.data.visited}`}
+              data={item.data}
+              onDismissItem={onDismissItem}
+              onItemClicked={onItemClicked}
+            />)}
+          </FlipMove>
           <button 
             type="button" 
             className="button-apply-all"
