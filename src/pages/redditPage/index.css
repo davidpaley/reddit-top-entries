@@ -14,13 +14,3 @@ body {
 }
 
 .App::-webkit-scrollbar { width: 0 !important }
-
-@media screen and (min-width: 64em) {
-  .post-container {
-    width: 75%;
-  }
-}
-.post-container {
-  width: 45%;
-}
-

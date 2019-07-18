@@ -2,21 +2,12 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types'; 
 import './index.css';
 
-
 class ListCard extends PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired,
     onDismissItem: PropTypes.func.isRequired,
     onItemClicked: PropTypes.func.isRequired,
   };
-  
-  state = {
-    data: {}
-  }
-
-  componentDidUpdate() {
-    this.setState({ data: this.props.data })
-  }
 
   getHoursAgo = (date) => {
     const postDate = new Date(date*1000);
@@ -45,8 +36,9 @@ class ListCard extends PureComponent {
           className={`list-card ${data.visited === true ? 'visited-item' : ''}`}>
           <div className="title-container">
             <h5 className="list-title">{data.author}</h5>
-            <span className="hours-container">{this.getHoursAgo(data.created)} hours ago</span>
-
+            <span className="hours-container">
+              {this.getHoursAgo(data.created)} hours ago
+            </span>
           </div>
           <div className="container">
             <div className="img-container">

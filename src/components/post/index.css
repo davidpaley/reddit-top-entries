@@ -1,0 +1,19 @@
+@media screen and (min-width: 64em) {
+    .post-container {
+      width: 75%;
+    }
+  }
+  .post-container {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px
+  }
+
+  .img-post {
+    align-self: center;
+  }
+
+  .post-title {
+    word-break: break-all;
+  }

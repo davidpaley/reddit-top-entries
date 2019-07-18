@@ -4,21 +4,18 @@
   cursor: pointer;
 }
 
-.list-card-container {
-
-}
-
 .img-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 2px;
 }
 
 .text-container {
-  display: none;
+  padding: 5px;
 }
+
 .container {
   display: flex;
   flex-direction: row;
@@ -53,6 +50,9 @@
 }
 
 @media screen and (min-width: 52em) {
+  .img-container {
+    flex-direction: row;
+  }
   .text-container {
     padding: 5px;
     display: block;

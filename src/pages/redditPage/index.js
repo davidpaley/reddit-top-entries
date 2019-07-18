@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setRedditList, 
@@ -6,10 +6,11 @@ import { setRedditList,
 } from '../../redux/actions/redditList';
 import { getRedditLastEntries } from '../../service/redditApi';
 import SidebarMenu from '../../components/sidebarMenu';
+import Post from '../../components/post';
 import './index.css';
 
 
-class RedditPage extends PureComponent {
+class RedditPage extends Component {
   static propTypes = {
     redditList: PropTypes.object.isRequired,
     setRedditList: PropTypes.func.isRequired,
@@ -32,9 +33,9 @@ class RedditPage extends PureComponent {
     return (
       <div className="App">
           <SidebarMenu />
-          <div className="post-container">
-            <h1>{lastPostVisited && lastPostVisited.data && lastPostVisited.data.title}</h1>
-          </div>
+          <Post
+            post={lastPostVisited}
+          />
       </div>
     )
   }
