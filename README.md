@@ -1,6 +1,6 @@
 ## Description
 
-This project is an example of a connection with the reddit API with some specific customisation in the FE.
+This project is an example of a connection with the reddit API with some specific customizations in the FE.
 
 ## Deployed URL
 
