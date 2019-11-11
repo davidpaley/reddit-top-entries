@@ -98,8 +98,8 @@ const SidebarMenu = (props) => {
   )
 }
 
-const mapStateToProps = state => ({
-  ...state,
+const mapStateToProps = ({ redditList }) => ({
+  redditList,
 });
 
 const mapDispatchToProps = dispatch => ({

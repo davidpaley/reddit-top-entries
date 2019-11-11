@@ -55,8 +55,8 @@ class RedditPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  ...state,
+const mapStateToProps = ({ redditList }) => ({
+  redditList,
 });
 
 const mapDispatchToProps = dispatch => ({
