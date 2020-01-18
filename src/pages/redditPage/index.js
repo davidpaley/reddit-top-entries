@@ -39,10 +39,6 @@ class RedditPage extends Component {
   }
   render() {
     const { lastPostVisited, pictureGalery } = this.props.redditList;
-    if (pictureGalery.length) {
-      console.log('The picture galary has:');
-      console.log(pictureGalery);
-    }
     return (
       <div className="App">
           <SidebarMenu />
